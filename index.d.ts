@@ -1,5 +1,5 @@
-// Type definitions for device.js v0.2.7
-// Project: https://github.com/matthewhudson/device.js
+// Type definitions for device.js
+// Project: https://github.com/soenkekluth/device.js
 // Definitions by: Barin Britva <https://github.com/barinbritva>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
