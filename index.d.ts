@@ -3,41 +3,45 @@
 // Definitions by: Barin Britva <https://github.com/barinbritva>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-declare namespace device.js {
+function device(userAgent?: string, classContainer?: Element): device.Device;
+
+declare namespace device {
+    interface CheckingFunction {
+        (): boolean;
+    }
+
+    interface NoConflictFunction {
+        (): Device;
+    }
+    
     export interface Device {
-        mobile: () => boolean;
-        tablet: () => boolean;
-        desktop: () => boolean;
-        ios: () => boolean;
-        ipad: () => boolean;
-        iphone: () => boolean;
-        ipod: () => boolean;
-        android: () => boolean;
-        androidPhone: () => boolean;
-        androidTablet: () => boolean;
-        blackberry: () => boolean;
-        blackberryPhone: () => boolean;
-        blackberryTablet: () => boolean;
-        windows: () => boolean;
-        windowsPhone: () => boolean;
-        windowsTablet: () => boolean;
-        fxos: () => boolean;
-        fxosPhone: () => boolean;
-        fxosTablet: () => boolean;
-        meego: () => boolean;
-        television: () => boolean;
+        mobile: CheckingFunction;
+        tablet: CheckingFunction;
+        desktop: CheckingFunction;
+        ios: CheckingFunction;
+        ipad: CheckingFunction;
+        iphone: CheckingFunction;
+        ipod: CheckingFunction;
+        android: CheckingFunction;
+        androidPhone: CheckingFunction;
+        androidTablet: CheckingFunction;
+        blackberry: CheckingFunction;
+        blackberryPhone: CheckingFunction;
+        blackberryTablet: CheckingFunction;
+        windows: CheckingFunction;
+        windowsPhone: CheckingFunction;
+        windowsTablet: CheckingFunction;
+        fxos: CheckingFunction;
+        fxosPhone: CheckingFunction;
+        fxosTablet: CheckingFunction;
+        meego: CheckingFunction;
+        television: CheckingFunction;
 
-        landscape: () => boolean;
-        portrait: () => boolean;
+        landscape: CheckingFunction;
+        portrait: CheckingFunction;
 
-        noConflict: () => Device;
+        noConflict: NoConflictFunction;
     }
 }
 
-declare module 'device.js' {
-      import Device = device.js.Device;
-
-      function device(userAgent?: string, classContainer?: Element): Device;
-
-      export = device;
-}
+export = device;
